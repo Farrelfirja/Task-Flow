@@ -26,16 +26,17 @@
 <body>
     <div class="login-container text-center">
         <h2 class="mb-3">Login</h2>
-        <form>
+        <form action="{{route ('login.process')}}" method="post">
+            @csrf
             <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Email atau Username" required>
+                <input type="text" class="form-control" name="username" placeholder="Email atau Username" required>
             </div>
             <div class="mb-3">
-                <input type="password" class="form-control" placeholder="Password" required>
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
             </div>
             <button type="submit" class="btn btn-primary w-100">Masuk</button>
         </form>
-        <p class="mt-3">Belum punya akun? <a href="#">Buat Akun</a></p>
+        <p class="mt-3">Belum punya akun? <a href={{route('register.user')}}>Buat Akun</a></p>
     </div>
 </body>
 </html>

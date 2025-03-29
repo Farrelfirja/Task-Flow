@@ -10,7 +10,8 @@
     <div class="container mt-5">
         <div class="card shadow-lg p-4">
             <h2 class="text-center mb-4">Tambah Data Karyawan</h2>
-            <form action="/karyawan/store" method="POST">
+            <form action={{route('users.add')}} method="POST">
+                @csrf
                 <div class="mb-3">
                     <label class="form-label">Username</label>
                     <input type="text" name="username" class="form-control" required>
@@ -29,11 +30,11 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Tanggal Lahir</label>
-                    <input type="date" name="tgl_lahir" class="form-control" required>
+                    <input type="date" name="tanggal_lahir" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Nomor Telepon</label>
-                    <input type="tel" name="nomer_telepon" class="form-control" required>
+                    <input type="tel" name="nomor_telepon" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Alamat</label>
